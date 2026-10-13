@@ -10,7 +10,7 @@ que **solo funciona con su propio software**. Para usarlo desde una
 aplicación web propia necesitamos reemplazar ese driver por uno
 universal (`libusb-win32`) que permite acceso directo al hardware.
 
-> ⚠️ Este cambio solo afecta al lector de huella.
+> Este cambio solo afecta al lector de huella.
 > No afecta a ningún otro dispositivo.
 > Puede revertirse fácilmente desde el Administrador de dispositivos.
 
@@ -19,7 +19,7 @@ universal (`libusb-win32`) que permite acceso directo al hardware.
 ## PASO 1 — Instalar Python 3
 
 1. Descarga Python desde: **https://www.python.org/downloads/**
-2. En el instalador **marca** ✅ `Add Python to PATH`  ← MUY IMPORTANTE
+2. En el instalador **marca** `Add Python to PATH`  ← MUY IMPORTANTE
 3. Click en "Install Now"
 4. Verifica abriendo cmd:
    ```
@@ -95,7 +95,7 @@ Abre `prueba_huella.jpg` para ver la imagen capturada.
 ## Flujo técnico completo
 
 ```
-Botón "👆 Capturar huella" (navegador Chrome/Edge)
+Botón "Capturar huella" (navegador Chrome/Edge)
   │
   ├─→ AJAX GET → capturar_huella.php  (PHP/XAMPP)
   │       │
@@ -137,7 +137,7 @@ Si en algún momento quieres volver al driver original de DigitalPersona:
 
 1. Abrir **Administrador de dispositivos**
 2. Buscar el lector bajo "Dispositivos de bus serie universal"
-3. Clic derecho → **Actualizar controlador**
+3. Clic derecho **Actualizar controlador**
 4. Buscar automáticamente — Windows reinstalará el driver original
 
 ---
