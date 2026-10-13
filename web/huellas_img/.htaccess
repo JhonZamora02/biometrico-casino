@@ -1,0 +1,8 @@
+# Seguridad: bloquear acceso directo al listado de la carpeta
+Options -Indexes
+
+# Solo permitir visualización de imágenes JPG
+<FilesMatch "\.(?!jpg$)[^.]+$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

@@ -1,0 +1,142 @@
+/* ============================================================
+   Sistema Biométrico — Casino | style.css
+   ============================================================ */
+
+/* ── Variables ─────────────────────────────────────────────── */
+:root {
+  --primary   : #0f3460;
+  --secondary : #16213e;
+  --accent    : #e94560;
+  --light-bg  : #f5f7fa;
+  --card-bg   : #ffffff;
+  --text-dark : #222;
+  --text-muted: #666;
+  --radius    : 12px;
+  --shadow    : 0 4px 16px rgba(0,0,0,.1);
+}
+
+/* ── Reset & base ───────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Header / Navbar ────────────────────────────────────────── */
+.site-header {
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+}
+
+.site-header .navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff !important;
+  letter-spacing: .5px;
+}
+
+.site-header .nav-link {
+  color: rgba(255,255,255,.85) !important;
+  font-weight: 500;
+  transition: color .2s;
+}
+
+.site-header .nav-link:hover {
+  color: #fff !important;
+}
+
+/* ── Sección principal ──────────────────────────────────────── */
+.about_section,
+.layout_padding {
+  padding: 40px 0;
+}
+
+/* ── Títulos personalizados ─────────────────────────────────── */
+.custom_heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.custom_heading span {
+  color: var(--primary);
+}
+
+/* ── Cards y contenedores ───────────────────────────────────── */
+.card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ── Botones ────────────────────────────────────────────────── */
+.btn-primary {
+  background-color: var(--primary);
+  border-color    : var(--primary);
+  border-radius   : 8px;
+  font-weight     : 600;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary);
+  border-color    : var(--secondary);
+}
+
+/* ── Tabla DataTables ───────────────────────────────────────── */
+table.dataTable thead th {
+  background: var(--primary);
+  color      : #fff;
+  font-weight: 600;
+  border     : none;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #eaf3ff;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.footer_section {
+  background : var(--secondary);
+  color      : rgba(255,255,255,.7);
+  text-align : center;
+  padding    : 18px 0;
+  font-size  : .85rem;
+  margin-top : 40px;
+}
+
+.footer_section a {
+  color: rgba(255,255,255,.6);
+  text-decoration: none;
+}
+
+.footer_section a:hover {
+  color: #fff;
+}
+
+/* ── Imagen de portada en vista asistencia ──────────────────── */
+.img-box img {
+  max-width   : 100%;
+  border-radius: var(--radius);
+  box-shadow  : var(--shadow);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .custom_heading { font-size: 1.4rem; }
+  .about_section, .layout_padding { padding: 24px 0; }
+}
+
+/* ── Print styles ───────────────────────────────────────────── */
+@media print {
+  .site-header,
+  .footer_section,
+  .btn,
+  #btnFiltrar,
+  #btnLimpiar { display: none !important; }
+  body { background: #fff; }
+}
