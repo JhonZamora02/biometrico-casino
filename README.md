@@ -8,22 +8,22 @@ El flujo es simple: el empleado reserva su almuerzo del día ingresando su cédu
 
 ## Tabla de contenido
 
-- [Características](#-características)
-- [¿Cómo funciona?](#-cómo-funciona)
-- [Arquitectura](#-arquitectura)
-- [Tecnologías](#-tecnologías)
-- [Estructura del proyecto](#-estructura-del-proyecto)
-- [Requisitos](#-requisitos)
-- [Instalación rápida](#-instalación-rápida)
-- [Uso](#-uso)
-- [Base de datos](#-base-de-datos)
-- [Capturas de pantalla](#-capturas-de-pantalla)
-- [Documentación adicional](#-documentación-adicional)
-- [Limitaciones conocidas y mejoras sugeridas](#-limitaciones-conocidas-y-mejoras-sugeridas)
+- [Características](#características)
+- [¿Cómo funciona?](#cómo-funciona)
+- [Arquitectura](#arquitectura)
+- [Tecnologías](#tecnologías)
+- [Estructura del proyecto](#estructura-del-proyecto)
+- [Requisitos](#requisitos)
+- [Instalación rápida](#instalación-rápida)
+- [Uso](#uso)
+- [Base de datos](#base-de-datos)
+- [Capturas de pantalla](#capturas-de-pantalla)
+- [Documentación adicional](#documentación-adicional)
+- [Limitaciones conocidas y mejoras sugeridas](#limitaciones-conocidas-y-mejoras-sugeridas)
 
 ---
 
-##  Características
+## Características
 
 - **Registro de asistencia público** por número de cédula (pantalla de inicio, sin login).
 - **Verificación biométrica** de la reserva de almuerzo: captura la huella, identifica al empleado y confirma que tiene reserva para el día actual.
@@ -36,11 +36,14 @@ El flujo es simple: el empleado reserva su almuerzo del día ingresando su cédu
 ## ¿Cómo funciona?
 
 ```
-1. Registro        El empleado ingresa su cédula en la pantalla de inicio se guarda su asistencia/reserva del día en la BD.
+1. Registro        El empleado ingresa su cédula en la pantalla de inicio
+                   → se guarda su asistencia/reserva del día en la BD.
 
-2. Verificación    En el puesto de entrega, el empleado presiona "Verificar huella" y coloca el dedo en el lector.
+2. Verificación    En el puesto de entrega, el empleado presiona "Verificar huella"
+                   y coloca el dedo en el lector.
 
-3. Identificación  El sistema compara la imagen capturada contra las huellas registradas y localiza al empleado.
+3. Identificación  El sistema compara la imagen capturada contra las huellas
+                   registradas y localiza al empleado.
 
 4. Confirmación    Si la huella coincide Y el empleado tiene reserva hoy,
                    se muestra la pantalla "¡Disfrute de su almuerzo!".
@@ -56,9 +59,11 @@ Navegador (Chrome/Edge)
    │  AJAX
    ▼
 PHP (Apache / XAMPP)  ──── socket TCP 127.0.0.1:7842 ────►  Agente de huella (Python 32-bit)
-                                                                   │  COM (DPFPDevX)                                                                
+                                                                   │  COM (DPFPDevX)
+                                                                   ▼
                                                       SDK DigitalPersona One Touch
                                                                    │
+                                                                   ▼
                                                        Lector U.are.U 4500 (USB)
 ```
 
@@ -186,7 +191,7 @@ El orden correcto es: **XAMPP → Driver → SDK → Python → BD → Proyecto 
 
 ### Acceso al panel administrativo
 
-Ingresa en `web/login.php`. Las credenciales por defecto son de demostración (ver [mejoras sugeridas](#-limitaciones-conocidas-y-mejoras-sugeridas)):
+Ingresa en `web/login.php`. Las credenciales por defecto son de demostración (ver [mejoras sugeridas](#limitaciones-conocidas-y-mejoras-sugeridas)):
 
 | Usuario | Contraseña |
 |---------|-----------|
@@ -205,7 +210,7 @@ Ingresa en `web/login.php`. Las credenciales por defecto son de demostración (v
 ### Registrar la huella de un empleado
 
 1. Ir a **Empleados** → crear o editar un empleado.
-2. Con el agente corriendo y el lector conectado, pulsar **Capturar huella**.
+2. Con el agente corriendo y el lector conectado, pulsar **👆 Capturar huella**.
 3. Colocar el dedo completo y centrado en el lector; se mostrará la vista previa.
 4. Guardar. La imagen queda en `web/huellas_img/huella_{cedula}.jpg` y su ruta en la BD.
 
