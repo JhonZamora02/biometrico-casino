@@ -36,14 +36,11 @@ El flujo es simple: el empleado reserva su almuerzo del día ingresando su cédu
 ## ¿Cómo funciona?
 
 ```
-1. Registro        El empleado ingresa su cédula en la pantalla de inicio
-                   → se guarda su asistencia/reserva del día en la BD.
+1. Registro        El empleado ingresa su cédula en la pantalla de inicio se guarda su asistencia/reserva del día en la BD.
 
-2. Verificación    En el puesto de entrega, el empleado presiona "Verificar huella"
-                   y coloca el dedo en el lector.
+2. Verificación    En el puesto de entrega, el empleado presiona "Verificar huella" y coloca el dedo en el lector.
 
-3. Identificación  El sistema compara la imagen capturada contra las huellas
-                   registradas y localiza al empleado.
+3. Identificación  El sistema compara la imagen capturada contra las huellas registradas y localiza al empleado.
 
 4. Confirmación    Si la huella coincide Y el empleado tiene reserva hoy,
                    se muestra la pantalla "¡Disfrute de su almuerzo!".
@@ -59,11 +56,9 @@ Navegador (Chrome/Edge)
    │  AJAX
    ▼
 PHP (Apache / XAMPP)  ──── socket TCP 127.0.0.1:7842 ────►  Agente de huella (Python 32-bit)
-                                                                   │  COM (DPFPDevX)
-                                                                   ▼
+                                                                   │  COM (DPFPDevX)                                                                
                                                       SDK DigitalPersona One Touch
                                                                    │
-                                                                   ▼
                                                        Lector U.are.U 4500 (USB)
 ```
 
