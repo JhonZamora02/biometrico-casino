@@ -210,7 +210,7 @@ Ingresa en `web/login.php`. Las credenciales por defecto son de demostración (v
 ### Registrar la huella de un empleado
 
 1. Ir a **Empleados** → crear o editar un empleado.
-2. Con el agente corriendo y el lector conectado, pulsar **👆 Capturar huella**.
+2. Con el agente corriendo y el lector conectado, pulsar **Capturar huella**.
 3. Colocar el dedo completo y centrado en el lector; se mostrará la vista previa.
 4. Guardar. La imagen queda en `web/huellas_img/huella_{cedula}.jpg` y su ruta en la BD.
 
